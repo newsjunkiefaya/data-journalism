@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+                <style>
+        #container {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+
+        }
+                </style>
+                <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <p>好棒棒</p>
+    <script>
+    var data = [60, 100, 66, 23, 41, 45];
+    var body = d3.select("body")
+                .selectAll("span")
+                .data(data)
+                .enter().append("p")
+                .style('color', function(d) {
+                     if (d % 2 === 0) {
+                         return "green";
+                     } else {
+                         return "red";
+                     }
+                 })
+                .text(function(d) { return d + " "; });
+</script>
+</body>
+</html>
